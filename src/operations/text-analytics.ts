@@ -27,8 +27,3 @@ export const TextAnalyticsSchema = z.object({
   text: z.string(),
   questions: QuestionListSchema,
 });
-
-export async function performTextAnalysis(
-  text: string,
-  questions: z.infer<typeof QuestionListSchema>,
-) {}

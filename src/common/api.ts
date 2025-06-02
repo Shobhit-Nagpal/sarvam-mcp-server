@@ -25,17 +25,22 @@ export async function sarvamRequest<T>(
     headers["api-subscription-key"] = envManager.getSarvamAPIKey();
   }
 
-  const res = await fetch(`${SARVAM_BASE_URL}/${endpoint}`, {
-    method: options.method || "GET",
-    headers,
-    body: options.body ? JSON.stringify(options.body) : undefined,
-  });
+  try {
+    const res = await fetch(`${SARVAM_BASE_URL}/${endpoint}`, {
+      method: options.method || "GET",
+      headers,
+      body: options.body ? JSON.stringify(options.body) : undefined,
+    });
 
-  if (!res.ok) {
-    throw createSarvamError(res.status, res);
+    if (!res.ok) {
+      throw createSarvamError(res.status, res);
+    }
+
+    const data: T = await res.json();
+
+    return data;
+  } catch (error) {
+    console.error("Error: ", error);
+    return null;
   }
-
-  const data: T = await res.json();
-
-  return data;
 }

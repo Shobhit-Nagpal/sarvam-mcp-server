@@ -27,8 +27,8 @@ class EnvManager {
     this.SARVAM_API_KEY = sarvamApiKey;
   }
 
-  public getSarvamAPIKey() {
-    return this.SARVAM_API_KEY;
+  public getSarvamAPIKey(): string {
+    return this.SARVAM_API_KEY as string;
   }
 }
 

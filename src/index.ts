@@ -45,7 +45,7 @@ server.tool(
         SARVAM_ENDPOINTS.LanguageIdentification,
         {
           method: "POST",
-          body: JSON.stringify({ input }),
+          body: { input },
         },
       );
 
@@ -72,7 +72,7 @@ server.tool(
       SARVAM_ENDPOINTS.TextAnalytics,
       {
         method: "POST",
-        body: JSON.stringify({ text, questions }),
+        body: { text, questions },
       },
     );
 
@@ -114,7 +114,7 @@ server.tool(
       SARVAM_ENDPOINTS.TranslateText,
       {
         method: "POST",
-        body: JSON.stringify({
+        body: {
           input,
           source_language_code,
           target_language_code,
@@ -124,7 +124,7 @@ server.tool(
           enable_processing,
           output_script,
           numerals_format,
-        }),
+        },
       },
     );
 
@@ -154,14 +154,14 @@ server.tool(
       SARVAM_ENDPOINTS.TransliterateText,
       {
         method: "POST",
-        body: JSON.stringify({
+        body: {
           input,
           source_language_code,
           target_language_code,
           numerals_format,
           spoken_form,
           spoken_form_numerals_language,
-        }),
+        },
       },
     );
 
@@ -169,7 +169,8 @@ server.tool(
       return createToolResponse("Failed to transliterate text data");
     }
 
-    const formattedTransliterateText = formatTransliterateText(transliterateText);
+    const formattedTransliterateText =
+      formatTransliterateText(transliterateText);
 
     return createToolResponse(formattedTransliterateText);
   },

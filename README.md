@@ -63,7 +63,7 @@ Add this to your `claude_desktop_config.json`:
       "command": "npx",
       "args": [
         "-y",
-        "@shobhit-nagpal/sarvam-mcp-server"
+        "sarvam-mcp-server"
       ],
       "env": {
         "SARVAM_API_KEY": "YOUR_API_KEY_HERE"
@@ -73,12 +73,12 @@ Add this to your `claude_desktop_config.json`:
 }
 ```
 
-### NPM Package (Coming Soon)
+### NPM Package
 
-The package will be available on npm as `@shobhit-nagpal/sarvam-mcp-server`. You'll be able to install it using:
+The package is available on npm as `sarvam-mcp-server`. Install it using:
 
 ```bash
-npm install @shobhit-nagpal/sarvam-mcp-server
+npm install sarvam-mcp-server
 ```
 
 ### Docker Support (Coming Soon)

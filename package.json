@@ -12,6 +12,8 @@
   ],
   "scripts": {
     "build": "tsc -b && chmod 755 dist/index.js",
+    "start": "node dist/index.js",
+    "dry-run": "npm publish --dry-run",
     "release:patch": "npm version patch && git push --follow-tags && npm publish",
     "release:minor": "npm version minor && git push --follow-tags && npm publish",
     "release:major": "npm version major && git push --follow-tags && npm publish"

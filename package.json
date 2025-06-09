@@ -1,6 +1,6 @@
 {
   "name": "sarvam-mcp-server",
-  "description": "",
+  "description": "A Model Context Protocol (MCP) server implementation for Sarvam's text processing capabilities, providing language identification, text analytics, translation, and transliteration services for Indian languages.",
   "version": "1.0.0",
   "main": "index.js",
   "type": "module",
@@ -22,7 +22,16 @@
     "type": "git",
     "url": "git+https://github.com/Shobhit-Nagpal/sarvam-mcp-server.git"
   },
-  "keywords": [],
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "sarvam",
+    "language-identification",
+    "text-analytics",
+    "translation",
+    "transliteration",
+    "indian-languages"
+  ],
   "author": "shobhit-nagpal",
   "license": "MIT",
   "bugs": {

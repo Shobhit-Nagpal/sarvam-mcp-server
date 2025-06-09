@@ -81,9 +81,42 @@ The package is available on npm as `sarvam-mcp-server`. Install it using:
 npm install sarvam-mcp-server
 ```
 
-### Docker Support (Coming Soon)
+### Usage with Docker
 
-Docker support is planned for future releases. Stay tuned for updates!
+The server is available as a Docker image at [shbhtngpl/sarvam-mcp-server](https://hub.docker.com/repository/docker/shbhtngpl/sarvam-mcp-server).
+
+1. Pull the image:
+```bash
+docker pull shbhtngpl/sarvam-mcp-server
+```
+
+2. Run the container:
+```bash
+docker run -i --rm -e SARVAM_API_KEY=your_api_key_here shbhtngpl/sarvam-mcp-server
+```
+
+For Claude Desktop integration, use this configuration in your `claude_desktop_config.json`:
+
+```json
+{
+  "mcpServers": {
+    "sarvam": {
+      "command": "docker",
+      "args": [
+        "run",
+        "-i",
+        "--rm",
+        "-e",
+        "SARVAM_API_KEY",
+        "shbhtngpl/sarvam-mcp-server"
+      ],
+      "env": {
+        "SARVAM_API_KEY": "YOUR_API_KEY_HERE"
+      }
+    }
+  }
+}
+```
 
 ## Development
 

@@ -29,7 +29,7 @@ export async function sarvamRequest<T>(
     const res = await fetch(`${SARVAM_BASE_URL}/${endpoint}`, {
       method: options.method || "GET",
       headers,
-      body: options.body ? JSON.stringify(options.body) : undefined,
+      body: options.body ? (options.body as BodyInit) : undefined,
     });
 
     if (!res.ok) {

@@ -45,7 +45,7 @@ server.tool(
         SARVAM_ENDPOINTS.LanguageIdentification,
         {
           method: "POST",
-          body: { input },
+          body: JSON.stringify({ input }),
         },
       );
 
@@ -72,7 +72,13 @@ server.tool(
       SARVAM_ENDPOINTS.TextAnalytics,
       {
         method: "POST",
-        body: { text, questions },
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: new URLSearchParams({
+          text,
+          questions: JSON.stringify(questions),
+        }),
       },
     );
 
@@ -114,7 +120,7 @@ server.tool(
       SARVAM_ENDPOINTS.TranslateText,
       {
         method: "POST",
-        body: {
+        body: JSON.stringify({
           input,
           source_language_code,
           target_language_code,
@@ -124,7 +130,7 @@ server.tool(
           enable_processing,
           output_script,
           numerals_format,
-        },
+        }),
       },
     );
 
@@ -154,14 +160,14 @@ server.tool(
       SARVAM_ENDPOINTS.TransliterateText,
       {
         method: "POST",
-        body: {
+        body: JSON.stringify({
           input,
           source_language_code,
           target_language_code,
           numerals_format,
           spoken_form,
           spoken_form_numerals_language,
-        },
+        }),
       },
     );
 

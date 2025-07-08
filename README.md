@@ -1,3 +1,5 @@
+[![MseeP.ai Security Assessment Badge](https://mseep.net/pr/shobhit-nagpal-sarvam-mcp-server-badge.png)](https://mseep.ai/app/shobhit-nagpal-sarvam-mcp-server)
+
 # Sarvam MCP Server
 
 An MCP server implementation that integrates the Sarvam API, providing comprehensive text processing capabilities for Indian languages.
